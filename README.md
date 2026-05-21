@@ -24,8 +24,9 @@ Features:
  Save and load data from JSON file
 
 
-Project Structure:
+## Project Structure
 
+```
 finance_tUracker/
 ├── main.py                    # Entry point, CLI menu
 ├── models/
@@ -43,7 +44,7 @@ finance_tUracker/
 └── README.md
 
 
-json
+```json
 [
     {"type": "expense", "category": "food", "amount": 20, "date": "2026-05-01", "description": "Lunch"},
     {"type": "income", "amount": 1000, "date": "2026-05-01", "description": "Salary"}
