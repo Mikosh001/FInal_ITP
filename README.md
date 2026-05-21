@@ -5,15 +5,14 @@ Course: Introduction to Programming 2 (Python) — Final Project
 Case: Case 3 — Personal Finance Tracker
 
 Team Members:
-Name                 - Contribution
-Mirzatayev Bagdaulet - models/, transaction classes
-Berdibek Meirbek     - services/finance_service.py, report_service.py
-Altair Abdraisov     - tests/test_finance.py, main.py 
-Daryn Yerbol         - utils/file_handler.py, validator.py
-
+| Name                 | Contribution                                   |
+|----------------------|------------------------------------------------|
+| Mirzatayev Bagdaulet | models/, transaction classes                   |
+| Berdibek Meirbek     | services/finance_service.py, report_service.py |
+| Altair Abdraisov     | tests/test_finance.py, main.py                 |
+| Daryn Yerbol         | utils/file_handler.py, validator.py            |
 
 Features:
-
  Add income and expense transactions
  View full transaction history
  View current balance
@@ -24,8 +23,7 @@ Features:
  Save and load data from JSON file
 
 
-## Project Structure
-
+Project Structure:
 ```
 finance_tUracker/
 ├── main.py                    # Entry point, CLI menu
@@ -42,7 +40,6 @@ finance_tUracker/
 ├── data/
 │   └── transactions.json      # Sample data file
 └── README.md
-
 
 ```json
 [
