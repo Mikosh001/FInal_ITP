@@ -30,3 +30,21 @@ class ReportService:
             return
         for category in totals:
             print(f"{category}: ${totals[category]:.2f}")
+    
+    def print_monthly_summary(self, year, month):
+        transactions = self._fs.get_transactions_by_month(year, month)
+        print(f"\n--- Monthly Summary ({year}-{month:02d}) ---")
+        if len(transactions) == 0:
+            print("No data for this month.")
+            return
+        income_total = 0
+        expense_total = 0
+        for t in transactions:
+            if t.get_type() == "income":
+                income_total += t.get_amount()
+            else:
+                expense_total += t.get_amount()
+        print(f"Income : ${income_total:.2f}")
+        print(f"Expense: ${expense_total:.2f}")
+        print(f"Savings: ${income_total - expense_total:.2f}")
+
