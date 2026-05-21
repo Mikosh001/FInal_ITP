@@ -47,4 +47,22 @@ class ReportService:
         print(f"Income : ${income_total:.2f}")
         print(f"Expense: ${expense_total:.2f}")
         print(f"Savings: ${income_total - expense_total:.2f}")
+        def print_overspending_warnings(self, budgets):
+        warnings = self._fs.detect_overspending(budgets)
+        print("\n--- Budget Check ---")
+        if len(warnings) == 0:
+            print("Everything is within budget.")
+            return
+        for category, spent, limit in warnings:
+            print(f"{category}: spent ${spent:.2f}, limit ${limit:.2f}")
+
+    def print_large_expenses(self, threshold=200):
+        print(f"\n--- Expenses Over ${threshold} ---")
+        found = False
+        for t in self._fs.expense_generator():
+            if t.is_large(threshold):
+                print(t)
+                found = True
+        if found == False:
+            print("No large expenses found.")
 
