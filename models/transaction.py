@@ -24,6 +24,7 @@ class Transaction:
 
     def to_dict(self):
         return {
+
             "type": self._type,
             "amount": self._amount,
             "date": self._date,
@@ -33,3 +34,22 @@ class Transaction:
 
     def __str__(self):
         return f"[{self._date}] {self._type.upper()} | ${self._amount:.2f} | {self._category}"
+
+
+
+class Expense(Transaction):
+    def __init__(self, amount, date, category, description=""):
+        super().__init__("expense", amount, date, category, description)
+
+    def is_large(self, threshold=200):
+        return self._amount > threshold
+
+    def __str__(self):
+        return f"[{self._date}] EXPENSE  | ${self._amount:.2f} | Category: {self._category} | {self._description}"
+
+
+
+
+
+
+
