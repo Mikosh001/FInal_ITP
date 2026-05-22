@@ -76,5 +76,54 @@ def handle_monthly_summary(report):
     except ValueError:
         print("  Please enter valid numbers for year and month.")
 
+def main():
+    data = load_transactions(DATA_FILE)
+
+    fs = FinanceService()
+    fs.load_from_data(data)
+
+    report = ReportService(fs)
+
+    print("Welcome to Personal Finance Tracker!")
+    print(f"Loaded {len(fs.get_all_transactions())} transactions from file.")
+
+    while True:
+        print_menu()
+        choice = input("Choose an option: ").strip()
+
+        if choice == "1":
+            handle_add_income(fs)
+        elif choice == "2":
+            handle_add_expense(fs)
+        elif choice == "3":
+            report.print_all_transactions()
+        elif choice == "4":
+            report.print_balance()
+        elif choice == "5":
+            report.print_category_breakdown()
+        elif choice == "6":
+            handle_monthly_summary(report)
+        elif choice == "7":
+            report.print_statistics()
+        elif choice == "8":
+            report.print_overspending_warnings(BUDGETS)
+        elif choice == "9":
+            try:
+                threshold = int(float(input("  Show expenses over: $").strip()))
+            except ValueError:
+                threshold = 200
+            report.print_large_expenses(threshold)
+        elif choice == "10":
+            fs.delete_last_transaction()
+        elif choice == "0":
+            save_transactions(DATA_FILE, fs.to_dict_list())
+            print("Goodbye!")
+            break
+        else:
+            print("  Invalid option. Please choose a number from the menu.")
+
+
+if __name__ == "__main__":
+    main()
 
 
