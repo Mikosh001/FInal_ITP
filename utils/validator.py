@@ -1,6 +1,3 @@
-# utils/validator.py
-# validation for amount, date, and category inputs
-
 import re
 
 VALID_CATEGORIES = {"food", "transport", "entertainment", "health", "bills", "shopping", "other"}
