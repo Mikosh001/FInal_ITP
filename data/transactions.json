@@ -1,0 +1,12 @@
+[
+    {"type": "income", "amount": 1500, "date": "2026-05-01", "category": "income", "description": "Monthly salary"},
+    {"type": "expense", "amount": 45, "date": "2026-05-02", "category": "food", "description": "Groceries"},
+    {"type": "expense", "amount": 20, "date": "2026-05-03", "category": "transport", "description": "Bus pass"},
+    {"type": "expense", "amount": 120, "date": "2026-05-05", "category": "bills", "description": "Electricity bill"},
+    {"type": "expense", "amount": 60, "date": "2026-05-07", "category": "entertainment", "description": "Cinema and dinner"},
+    {"type": "income", "amount": 200, "date": "2026-05-10", "category": "income", "description": "Freelance work"},
+    {"type": "expense", "amount": 35, "date": "2026-05-10", "category": "food", "description": "Restaurant"},
+    {"type": "expense", "amount": 300, "date": "2026-05-12", "category": "shopping", "description": "New shoes"},
+    {"type": "expense", "amount": 15, "date": "2026-04-15", "category": "food", "description": "Lunch"},
+    {"type": "income", "amount": 1500, "date": "2026-04-01", "category": "income", "description": "Monthly salary"}
+]
