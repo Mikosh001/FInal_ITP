@@ -1,6 +1,3 @@
-# utils/file_handler.py
-# Handles reading and writing transactions to a JSON file
-
 import json
 import os
 
