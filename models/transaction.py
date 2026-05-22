@@ -35,8 +35,6 @@ class Transaction:
     def __str__(self):
         return f"[{self._date}] {self._type.upper()} | ${self._amount:.2f} | {self._category}"
 
-
-
 class Expense(Transaction):
     def __init__(self, amount, date, category, description=""):
         super().__init__("expense", amount, date, category, description)
@@ -46,6 +44,18 @@ class Expense(Transaction):
 
     def __str__(self):
         return f"[{self._date}] EXPENSE  | ${self._amount:.2f} | Category: {self._category} | {self._description}"
+        class Income(Transaction):
+
+    def __init__(self, amount, date, description=""):
+        super().__init__("income", amount, date, category="income", description=description)
+
+    def is_large(self, threshold=2000):
+        return self._amount > threshold
+
+    def __str__(self):
+        return f"[{self._date}] INCOME   | ${self._amount:.2f} | {self._description}"
+
+        
 
 
 
